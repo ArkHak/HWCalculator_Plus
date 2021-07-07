@@ -18,4 +18,5 @@
     <string name="btn_minus">−</string>
     <string name="btn_division">÷</string>
     <string name="btn_deleting">⌫</string>
+    <string name="btn_multiply">×</string>
 </resources>

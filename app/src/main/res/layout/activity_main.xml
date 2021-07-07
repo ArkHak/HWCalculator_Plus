@@ -61,7 +61,7 @@
                     android:layout_margin="@dimen/lay_margin_btn"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="×"
+                    android:text="@string/btn_multiply"
                     android:textSize="@dimen/text_size_btn" />
 
                 <androidx.appcompat.widget.AppCompatButton

@@ -14,4 +14,8 @@
     <string name="btn_point">,</string>
     <string name="btn_calculate">=</string>
     <string name="btn_clear">C</string>
+    <string name="btn_plus">+</string>
+    <string name="btn_minus">−</string>
+    <string name="btn_division">÷</string>
+    <string name="btn_deleting">⌫</string>
 </resources>

@@ -36,18 +36,25 @@
                 android:textSize="@dimen/text_size_btn" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button_changeznack"
+                android:id="@+id/button_division"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/lay_margin_btn"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/btn_division"
+                android:textSize="@dimen/text_size_btn" />
+
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button_changeznack"
+                android:id="@+id/button_multiply"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/lay_margin_btn"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="×"
+                android:textSize="@dimen/text_size_btn" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_clear"
@@ -97,11 +104,14 @@
                 android:textSize="@dimen/text_size_btn" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button_changeznack"
+                android:id="@+id/button_back_step"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/lay_margin_btn"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/btn_deleting"
+                android:textSize="@dimen/text_size_btn" />
 
         </LinearLayout>
 
@@ -141,11 +151,14 @@
                 android:textSize="@dimen/text_size_btn" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button_changeznack"
+                android:id="@+id/button_minus"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/lay_margin_btn"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/btn_minus"
+                android:textSize="@dimen/text_size_btn" />
 
         </LinearLayout>
 
@@ -185,11 +198,14 @@
                 android:textSize="@dimen/text_size_btn" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button_changeznack"
+                android:id="@+id/button_plus"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/lay_margin_btn"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/btn_plus"
+                android:textSize="@dimen/text_size_btn" />
 
         </LinearLayout>
 

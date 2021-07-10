@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
-     android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
@@ -16,10 +16,53 @@
         android:orientation="vertical"
         tools:background="#FF0000">
 
-        <Space
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:background="#FF0000">
+
+
+            <TextView
+                android:id="@+id/view_variable_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:maxLines="1"
+                android:textDirection="rtl"
+                android:textSize="35sp"
+                android:text="132456789" />
+
+            <TextView
+                android:id="@+id/view_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:maxLines="1"
+                android:textDirection="rtl"
+                android:textSize="35sp"
+                android:text="132456789" />
+
+            <EditText
+                android:id="@+id/view_variable_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:autofillHints=""
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="numberDecimal"
+                android:longClickable="false"
+                android:maxLines="1"
+                android:textDirection="rtl"
+                android:textSize="35sp"
+                android:text="132456789" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

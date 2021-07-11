@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText textCounterB;
     private Variables variables;
     private СalculatorАctions calculatorActions;
+    private final int ZERO = 0;
 
 
     @Override
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonMultiply = findViewById(R.id.button_multiply);
         Button buttonDivision = findViewById(R.id.button_division);
         Button buttonClear = findViewById(R.id.button_clear);
+        Button buttonBackStep = findViewById(R.id.button_back_step);
 
 
         button0.setOnClickListener(v -> enterInInputField(СalculatorАctions.NUM0.toString()));
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         button9.setOnClickListener(v -> enterInInputField(СalculatorАctions.NUM9.toString()));
         buttonPoint.setOnClickListener(v -> enterInInputField(СalculatorАctions.POINT.toString()));
         buttonClear.setOnClickListener(v -> clearAll());
-
+        buttonBackStep.setOnClickListener(v -> backStep());
     }
 
     private void enterInInputField(String counter) {
@@ -80,9 +82,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String correctInputValue(String counter, String str) {
-        if (counter == СalculatorАctions.POINT.toString()) {
+        if (counter.equals(СalculatorАctions.POINT.toString())) {
             str = pointCheck(counter, str);
-        } else if (counter == СalculatorАctions.NUM0.toString()) {
+        } else if (counter.equals(СalculatorАctions.NUM0.toString())) {
             str = zeroCheck(counter, str);
         } else {
             if (str.equals(СalculatorАctions.NUM0.toString())) {
@@ -113,5 +115,11 @@ public class MainActivity extends AppCompatActivity {
         textCounterA.setText(null);
         textCounterB.getText().clear();
         textCounterAction.setText(null);
+    }
+
+    private void backStep() {
+        if (!(textCounterB.getText().length() == ZERO)) {
+            textCounterB.getText().delete(textCounterB.getText().length() - 1, textCounterB.getText().length());
+        }
     }
 }

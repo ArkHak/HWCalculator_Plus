@@ -12,4 +12,9 @@ public class Variables {
     }
 
 
+    public void clear() {
+        this.variableA = 0.0;
+        this.variableB = 0.0;
+        this.result = 0.0;
+    }
 }

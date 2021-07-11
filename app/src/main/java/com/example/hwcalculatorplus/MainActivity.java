@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textCounterA;
     private TextView textCounterAction;
     private EditText textCounterB;
+    private Variables variables;
     private СalculatorАctions calculatorActions;
 
 
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        variables = new Variables();
 
         initView();
     }
@@ -48,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
         Button button8 = findViewById(R.id.button_8);
         Button button9 = findViewById(R.id.button_9);
         Button buttonPoint = findViewById(R.id.button_point);
+        Button buttonPlus = findViewById(R.id.button_plus);
+        Button buttonMinus = findViewById(R.id.button_minus);
+        Button buttonMultiply = findViewById(R.id.button_multiply);
+        Button buttonDivision = findViewById(R.id.button_division);
+        Button buttonClear = findViewById(R.id.button_clear);
 
 
         button0.setOnClickListener(v -> enterInInputField(СalculatorАctions.NUM0.toString()));
@@ -61,17 +69,29 @@ public class MainActivity extends AppCompatActivity {
         button8.setOnClickListener(v -> enterInInputField(СalculatorАctions.NUM8.toString()));
         button9.setOnClickListener(v -> enterInInputField(СalculatorАctions.NUM9.toString()));
         buttonPoint.setOnClickListener(v -> enterInInputField(СalculatorАctions.POINT.toString()));
+        buttonClear.setOnClickListener(v -> clearAll());
+
     }
 
     private void enterInInputField(String counter) {
         String str = textCounterB.getText().toString();
+        str = correctInputValue(counter, str);
+        textCounterB.setText(String.format(Locale.getDefault(), "%s", str));
+    }
+
+    private String correctInputValue(String counter, String str) {
         if (counter == СalculatorАctions.POINT.toString()) {
             str = pointCheck(counter, str);
+        } else if (counter == СalculatorАctions.NUM0.toString()) {
+            str = zeroCheck(counter, str);
         } else {
-            str += counter;
+            if (str.equals(СalculatorАctions.NUM0.toString())) {
+                str = counter;
+            } else {
+                str += counter;
+            }
         }
-        textCounterB.setText(String.format(Locale.getDefault(), "%s",
-                str));
+        return str;
     }
 
     private String pointCheck(String counter, String str) {
@@ -79,5 +99,19 @@ public class MainActivity extends AppCompatActivity {
             str += counter;
         }
         return str;
+    }
+
+    private String zeroCheck(String counter, String str) {
+        if (textCounterB.getText().toString().isEmpty() || str.equals(counter)) {
+            return counter;
+        }
+        return str + counter;
+    }
+
+    private void clearAll() {
+        variables.clear();
+        textCounterA.setText(null);
+        textCounterB.getText().clear();
+        textCounterAction.setText(null);
     }
 }

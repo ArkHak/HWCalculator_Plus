@@ -32,9 +32,9 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="8dp"
                 android:maxLines="1"
-                android:textDirection="rtl"
+                android:textAlignment="textEnd"
                 android:textSize="35sp"
-                android:text="132456789" />
+                tools:text="132456789" />
 
             <TextView
                 android:id="@+id/view_action"
@@ -43,9 +43,9 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="8dp"
                 android:maxLines="1"
-                android:textDirection="rtl"
+                android:textAlignment="textEnd"
                 android:textSize="35sp"
-                android:text="132456789" />
+                tools:text="+" />
 
             <EditText
                 android:id="@+id/view_variable_b"
@@ -55,12 +55,12 @@
                 android:autofillHints=""
                 android:cursorVisible="false"
                 android:focusable="false"
+                android:hint="@string/text_hint_var_b"
                 android:inputType="numberDecimal"
                 android:longClickable="false"
-                android:maxLines="1"
-                android:textDirection="rtl"
+                android:textAlignment="textEnd"
                 android:textSize="35sp"
-                android:text="132456789" />
+                tools:text="132456789" />
 
         </LinearLayout>
 

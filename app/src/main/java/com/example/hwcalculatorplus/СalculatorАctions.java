@@ -1,21 +1,22 @@
 package com.example.hwcalculatorplus;
 
 public enum СalculatorАctions {
-    MULTIPLY("@string/btn_multiply"),
-    DIVISION("@string/btn_division"),
-    MINUS("@string/btn_minus"),
-    PLUS("@string/btn_plus"),
-    CALCULATE("@string/btn_calculate"),
-    NUM0("@string/btn_0"),
-    NUM1("@string/btn_1"),
-    NUM2("@string/btn_2"),
-    NUM3("@string/btn_3"),
-    NUM4("@string/btn_4"),
-    NUM5("@string/btn_5"),
-    NUM6("@string/btn_6"),
-    NUM7("@string/btn_7"),
-    NUM8("@string/btn_8"),
-    NUM9("@string/btn_9");
+    MULTIPLY("×"),
+    DIVISION("÷"),
+    MINUS("−"),
+    PLUS("+"),
+    CALCULATE("="),
+    POINT("."),
+    NUM0("0"),
+    NUM1("1"),
+    NUM2("2"),
+    NUM3("3"),
+    NUM4("4"),
+    NUM5("5"),
+    NUM6("6"),
+    NUM7("7"),
+    NUM8("8"),
+    NUM9("9");
 
 
     private String action;

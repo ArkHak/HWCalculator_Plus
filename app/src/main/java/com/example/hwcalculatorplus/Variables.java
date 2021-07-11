@@ -11,4 +11,5 @@ public class Variables {
         this.result = 0.0;
     }
 
+
 }

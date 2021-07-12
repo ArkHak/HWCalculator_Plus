@@ -3,6 +3,7 @@ package com.example.hwcalculatorplus;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,7 +16,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView textCounterAction;
     private EditText textCounterB;
     private Variables variables;
-    private СalculatorАctions calculatorActions;
+    private Button buttonMultiply;
+    private Button buttonPlus;
+    private Button buttonMinus;
+    private Button buttonDivision;
     private final int ZERO = 0;
 
 
@@ -73,7 +77,20 @@ public class MainActivity extends AppCompatActivity {
         buttonPoint.setOnClickListener(v -> enterInInputField(СalculatorАctions.POINT.toString()));
         buttonClear.setOnClickListener(v -> clearAll());
         buttonBackStep.setOnClickListener(v -> backStep());
+        buttonPlus.setOnClickListener(this::actionBtnClick);
+        buttonMinus.setOnClickListener(this::actionBtnClick);
+        buttonMultiply.setOnClickListener(this::actionBtnClick);
+        buttonDivision.setOnClickListener(this::actionBtnClick);
     }
+
+    private void actionBtnClick(View v) {
+        textCounterA.setText(textCounterB.getText().toString());
+        variables.setAction(searchAction(v.getId()));
+        textCounterAction.setText(variables.getAction());
+        textCounterB.getText().clear();
+    }
+
+
 
     private void enterInInputField(String counter) {
         String str = textCounterB.getText().toString();
@@ -119,7 +136,27 @@ public class MainActivity extends AppCompatActivity {
 
     private void backStep() {
         if (!(textCounterB.getText().length() == ZERO)) {
-            textCounterB.getText().delete(textCounterB.getText().length() - 1, textCounterB.getText().length());
+            textCounterB.getText().delete(textCounterB.getText().length() - 1,
+                    textCounterB.getText().length());
         }
+    }
+
+    private String convert(double num) {
+        if (num == (int) num) return (Integer.toString((int) num));
+        else return Double.toString(num);
+    }
+
+    private String searchAction(int id) {
+        switch (id) {
+            case R.id.button_division:
+                return СalculatorАctions.DIVISION.toString();
+            case R.id.button_multiply:
+                return СalculatorАctions.MULTIPLY.toString();
+            case R.id.button_minus:
+                return СalculatorАctions.MINUS.toString();
+            case R.id.button_plus:
+                return СalculatorАctions.PLUS.toString();
+        }
+        return null;
     }
 }

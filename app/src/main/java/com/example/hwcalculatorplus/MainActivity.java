@@ -81,12 +81,7 @@ public class MainActivity extends AppCompatActivity {
         buttonMultiply.setOnClickListener(this::actionBtnClick);
         buttonDivision.setOnClickListener(this::actionBtnClick);
         buttonCalculate.setOnClickListener(v -> calculate());
-        buttonChangeSign.setOnClickListener(v -> {
-            variables.setVariableB(textCounterB.getText().toString());
-            variables.changeSignB();
-            textCounterB.setText(String.format(Locale.getDefault(), "%s",
-                    convert(variables.getVariableB())));
-        });
+        buttonChangeSign.setOnClickListener(v -> changeSign());
     }
 
     private void actionBtnClick(View v) {
@@ -104,6 +99,13 @@ public class MainActivity extends AppCompatActivity {
         textCounterAction.setText(СalculatorАctions.CALCULATE.toString());
         textCounterB.setText(String.format(Locale.getDefault(), "%s",
                 convert(variables.getResult())));
+    }
+
+    private void changeSign() {
+        variables.setVariableB(textCounterB.getText().toString());
+        variables.changeSignB();
+        textCounterB.setText(String.format(Locale.getDefault(), "%s",
+                convert(variables.getVariableB())));
     }
 
 

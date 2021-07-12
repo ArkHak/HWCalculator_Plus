@@ -66,9 +66,15 @@ public class Variables {
     }
 
     public void calculate() {
-        if (action.equals(PLUS)) result = variableA + variableB;
-        if (action.equals(MINUS)) result = variableA - variableB;
-        if (action.equals(MULTIPLY)) result = variableA * variableB;
-        if (action.equals(DIVISION)) result = variableA / variableB;
+        if (action != null) {
+            if (action.equals(PLUS)) result = variableA + variableB;
+            if (action.equals(MINUS)) result = variableA - variableB;
+            if (action.equals(MULTIPLY)) result = variableA * variableB;
+            if (action.equals(DIVISION)) result = variableA / variableB;
+        }
+    }
+
+    public void changeSignB() {
+        variableB *= -1;
     }
 }

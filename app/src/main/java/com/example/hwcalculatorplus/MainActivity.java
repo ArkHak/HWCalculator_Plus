@@ -2,6 +2,7 @@ package com.example.hwcalculatorplus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,10 +17,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView textCounterAction;
     private EditText textCounterB;
     private Variables variables;
-    private Button buttonMultiply;
-    private Button buttonPlus;
-    private Button buttonMinus;
-    private Button buttonDivision;
     private final int ZERO = 0;
 
 
@@ -63,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonClear = findViewById(R.id.button_clear);
         Button buttonBackStep = findViewById(R.id.button_back_step);
         Button buttonCalculate = findViewById(R.id.button_calculate);
+        Button buttonChangeSign = findViewById(R.id.button_change_sign);
 
 
         button0.setOnClickListener(v -> enterInInputField(СalculatorАctions.NUM0.toString()));
@@ -82,13 +80,12 @@ public class MainActivity extends AppCompatActivity {
         buttonMinus.setOnClickListener(this::actionBtnClick);
         buttonMultiply.setOnClickListener(this::actionBtnClick);
         buttonDivision.setOnClickListener(this::actionBtnClick);
-        buttonCalculate.setOnClickListener(v -> {
-            variables.setVariableA(textCounterA.getText().toString());
+        buttonCalculate.setOnClickListener(v -> calculate());
+        buttonChangeSign.setOnClickListener(v -> {
             variables.setVariableB(textCounterB.getText().toString());
-            textCounterA.setText("");
-            variables.calculate();
-            textCounterAction.setText(СalculatorАctions.CALCULATE.toString());
-            textCounterB.setText(String.format(Locale.getDefault(), "%s", convert(variables.getResult())));
+            variables.changeSignB();
+            textCounterB.setText(String.format(Locale.getDefault(), "%s",
+                    convert(variables.getVariableB())));
         });
     }
 
@@ -99,6 +96,15 @@ public class MainActivity extends AppCompatActivity {
         textCounterB.getText().clear();
     }
 
+    private void calculate() {
+        variables.setVariableA(textCounterA.getText().toString());
+        variables.setVariableB(textCounterB.getText().toString());
+        textCounterA.setText(null);
+        variables.calculate();
+        textCounterAction.setText(СalculatorАctions.CALCULATE.toString());
+        textCounterB.setText(String.format(Locale.getDefault(), "%s",
+                convert(variables.getResult())));
+    }
 
 
     private void enterInInputField(String counter) {
@@ -155,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         else return Double.toString(num);
     }
 
+    @SuppressLint("NonConstantResourceId")
     private String searchAction(int id) {
         switch (id) {
             case R.id.button_division:

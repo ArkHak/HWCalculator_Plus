@@ -1,5 +1,6 @@
 package com.example.hwcalculatorplus;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView textCounterAction;
     private EditText textCounterB;
     private Variables variables;
+    private TextCounters textCounters;
+    private final String PARAM_COUNTER = "PARAM_COUNTER";
     private final int ZERO = 0;
 
 
@@ -26,8 +29,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         variables = new Variables();
+        textCounters = new TextCounters();
 
         initView();
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        textCounters.setTextCounterA(textCounterA.getText().toString());
+        textCounters.setTextCounterAction(textCounterAction.getText().toString());
+        textCounters.setTextCounterB(textCounterB.getText().toString());
+        outState.putParcelable(PARAM_COUNTER, textCounters);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        textCounters = savedInstanceState.getParcelable(PARAM_COUNTER);
+        if (textCounters == null) {
+            textCounters = new TextCounters();
+        }
+        updateCounters();
     }
 
     private void initView() {
@@ -93,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void calculate() {
         variables.setVariableA(textCounterA.getText().toString());
+        variables.setAction(textCounterAction.getText().toString());
         variables.setVariableB(textCounterB.getText().toString());
         textCounterA.setText(null);
         variables.calculate();
@@ -176,5 +200,11 @@ public class MainActivity extends AppCompatActivity {
                 return СalculatorАctions.PLUS.toString();
         }
         return null;
+    }
+
+    private void updateCounters() {
+        textCounterA.setText(textCounters.getTextCounterA());
+        textCounterAction.setText(textCounters.getTextCounterAction());
+        textCounterB.setText(textCounters.getTextCounterB());
     }
 }

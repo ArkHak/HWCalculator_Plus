@@ -5,42 +5,20 @@ public class Variables {
     private double variableB;
     private double result;
     private String action;
-    private boolean emptyA;
+    private final String PLUS = СalculatorАctions.PLUS.toString();
+    private final String MINUS = СalculatorАctions.MINUS.toString();
+    private final String MULTIPLY = СalculatorАctions.MULTIPLY.toString();
+    private final String DIVISION = СalculatorАctions.DIVISION.toString();
 
     public double getVariableA() {
         return variableA;
     }
 
     public void setVariableA(String variableA) {
-        Double tmpA;
         if (variableA.isEmpty()) {
-            tmpA = 0.0;
+            this.variableA = 0.0;
         } else {
-            tmpA = Double.parseDouble(variableA);
-        }
-        if (this.emptyA) {
-            this.variableA = tmpA;
-        } else {
-            calculate(tmpA);
-            this.variableA = this.result;
-        }
-
-        this.emptyA = false;
-    }
-
-    public void calculate(Double tmpA) {
-        switch (action) {
-            case СalculatorАctions.PLUS:
-                this.variableA += tmpA;
-                break;
-            case СalculatorАctions.MINUS.toString():
-                this.variableA -= tmpA;
-                break;
-            case СalculatorАctions.MULTIPLY.toString():
-                this.variableA *= tmpA;
-                break;
-            default:
-                this.variableA = 0.0;
+            this.variableA = Double.parseDouble(variableA);
         }
     }
 
@@ -48,8 +26,12 @@ public class Variables {
         return variableB;
     }
 
-    public void setVariableB(double variableB) {
-        this.variableB = variableB;
+    public void setVariableB(String variableB) {
+        if (variableB.isEmpty()) {
+            this.variableB = 0.0;
+        } else {
+            this.variableB = Double.parseDouble(variableB);
+        }
     }
 
     public double getResult() {
@@ -73,7 +55,6 @@ public class Variables {
         this.variableB = 0.0;
         this.result = 0.0;
         this.action = null;
-        this.emptyA = true;
     }
 
 
@@ -82,7 +63,12 @@ public class Variables {
         this.variableB = 0.0;
         this.result = 0.0;
         this.action = null;
-        this.emptyA = true;
     }
 
+    public void calculate() {
+        if (action.equals(PLUS)) result = variableA + variableB;
+        if (action.equals(MINUS)) result = variableA - variableB;
+        if (action.equals(MULTIPLY)) result = variableA * variableB;
+        if (action.equals(DIVISION)) result = variableA / variableB;
+    }
 }

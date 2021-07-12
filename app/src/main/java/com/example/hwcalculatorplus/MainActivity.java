@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonDivision = findViewById(R.id.button_division);
         Button buttonClear = findViewById(R.id.button_clear);
         Button buttonBackStep = findViewById(R.id.button_back_step);
+        Button buttonCalculate = findViewById(R.id.button_calculate);
 
 
         button0.setOnClickListener(v -> enterInInputField(СalculatorАctions.NUM0.toString()));
@@ -81,6 +82,14 @@ public class MainActivity extends AppCompatActivity {
         buttonMinus.setOnClickListener(this::actionBtnClick);
         buttonMultiply.setOnClickListener(this::actionBtnClick);
         buttonDivision.setOnClickListener(this::actionBtnClick);
+        buttonCalculate.setOnClickListener(v -> {
+            variables.setVariableA(textCounterA.getText().toString());
+            variables.setVariableB(textCounterB.getText().toString());
+            textCounterA.setText("");
+            variables.calculate();
+            textCounterAction.setText(СalculatorАctions.CALCULATE.toString());
+            textCounterB.setText(String.format(Locale.getDefault(), "%s", convert(variables.getResult())));
+        });
     }
 
     private void actionBtnClick(View v) {

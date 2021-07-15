@@ -7,19 +7,9 @@ public enum СalculatorАctions {
     PLUS("+"),
     CALCULATE("="),
     POINT("."),
-    NUM0("0"),
-    NUM1("1"),
-    NUM2("2"),
-    NUM3("3"),
-    NUM4("4"),
-    NUM5("5"),
-    NUM6("6"),
-    NUM7("7"),
-    NUM8("8"),
-    NUM9("9");
+    NUM0("0");
 
-
-    private String action;
+    private final String action;
 
     СalculatorАctions(String action) {
         this.action = action;

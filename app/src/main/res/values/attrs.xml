@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="сolorActionButton" format="color" />
+    <attr name="сolorCalculateButton" format="color" />
+    <attr name="сolorNumButton" format="color" />
+    <attr name="сolorTextCustom" format="color" />
+</resources>

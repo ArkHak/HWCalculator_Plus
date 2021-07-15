@@ -10,4 +10,5 @@
     <color name="clr_btn_action">#aaffcc32</color>
     <color name="clr_btn_calculate">#aa2bff35</color>
     <color name="clr_btn_nums">#aa2b35ff</color>
+    <color name="clr_btn_clear">#aaff2b2b</color>
 </resources>

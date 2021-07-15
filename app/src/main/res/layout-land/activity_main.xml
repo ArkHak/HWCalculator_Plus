@@ -74,39 +74,47 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_change_sign"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_action"
                     android:gravity="center"
                     android:text="@string/change_sing"
                     android:textSize="@dimen/text_size_btn_land" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_division"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_action"
                     android:gravity="center"
                     android:text="@string/btn_division"
                     android:textSize="@dimen/text_size_btn_land" />
 
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_multiply"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_action"
                     android:gravity="center"
                     android:text="@string/btn_multiply"
                     android:textSize="@dimen/text_size_btn_land" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_clear"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_clear"
                     android:gravity="center"
                     android:text="@string/btn_clear"
                     android:textSize="@dimen/text_size_btn_land" />
@@ -118,38 +126,46 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_7"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_nums"
                     android:gravity="center"
                     android:text="@string/btn_7"
                     android:textSize="@dimen/text_size_btn_land" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_8"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_nums"
                     android:gravity="center"
                     android:text="@string/btn_8"
                     android:textSize="@dimen/text_size_btn_land" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_9"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_nums"
                     android:gravity="center"
                     android:text="@string/btn_9"
                     android:textSize="@dimen/text_size_btn_land" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_back_step"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_action"
                     android:gravity="center"
                     android:text="@string/btn_deleting"
                     android:textSize="@dimen/text_size_btn_land" />
@@ -161,38 +177,46 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_4"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_nums"
                     android:gravity="center"
                     android:text="@string/btn_4"
                     android:textSize="@dimen/text_size_btn_land" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_5"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_nums"
                     android:gravity="center"
                     android:text="@string/btn_5"
                     android:textSize="@dimen/text_size_btn_land" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_6"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_nums"
                     android:gravity="center"
                     android:text="@string/btn_6"
                     android:textSize="@dimen/text_size_btn_land" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_minus"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_action"
                     android:gravity="center"
                     android:text="@string/btn_minus"
                     android:textSize="@dimen/text_size_btn_land" />
@@ -204,38 +228,46 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_nums"
                     android:gravity="center"
                     android:text="@string/btn_1"
                     android:textSize="@dimen/text_size_btn_land" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_nums"
                     android:gravity="center"
                     android:text="@string/btn_2"
                     android:textSize="@dimen/text_size_btn_land" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_nums"
                     android:gravity="center"
                     android:text="@string/btn_3"
                     android:textSize="@dimen/text_size_btn_land" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_plus"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_action"
                     android:gravity="center"
                     android:text="@string/btn_plus"
                     android:textSize="@dimen/text_size_btn_land" />
@@ -248,29 +280,35 @@
                 android:layout_weight="1">
 
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_0"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="2"
+                    android:backgroundTint="@color/clr_btn_nums"
                     android:gravity="center"
                     android:text="@string/btn_0"
                     android:textSize="@dimen/text_size_btn_land" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_point"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_nums"
                     android:gravity="center"
                     android:text="@string/btn_point"
                     android:textSize="@dimen/text_size_btn_land" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_calculate"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/clr_btn_calculate"
                     android:gravity="center"
                     android:text="@string/btn_calculate"
                     android:textSize="@dimen/text_size_btn_land" />

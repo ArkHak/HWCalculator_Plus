@@ -116,7 +116,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="#aaff2b2b"
+                    android:backgroundTint="@color/clr_btn_clear"
                     android:gravity="center"
                     android:text="@string/btn_clear"
                     android:textSize="@dimen/text_size_btn" />

@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="clr_btn_action">#aaffcc32</color>
+    <color name="clr_btn_calculate">#aa2bff35</color>
+    <color name="clr_btn_nums">#aa2b35ff</color>
 </resources>

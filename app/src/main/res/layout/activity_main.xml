@@ -29,29 +29,29 @@
                 android:id="@+id/view_variable_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="@dimen/mrg_horzl_textview"
+                android:layout_marginVertical="@dimen/mrg_vert_textview"
                 android:maxLines="1"
                 android:textAlignment="textEnd"
-                android:textSize="35sp"
+                android:textSize="@dimen/size_text_port"
                 tools:text="132456789" />
 
             <TextView
                 android:id="@+id/view_action"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="@dimen/mrg_horzl_textview"
+                android:layout_marginVertical="@dimen/mrg_vert_textview"
                 android:maxLines="1"
                 android:textAlignment="textEnd"
-                android:textSize="35sp"
+                android:textSize="@dimen/size_text_port"
                 tools:text="+" />
 
             <EditText
                 android:id="@+id/view_variable_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
+                android:layout_marginHorizontal="@dimen/mrg_horzl_textview"
                 android:autofillHints=""
                 android:cursorVisible="false"
                 android:focusable="false"
@@ -59,7 +59,7 @@
                 android:inputType="numberDecimal"
                 android:longClickable="false"
                 android:textAlignment="textEnd"
-                android:textSize="35sp"
+                android:textSize="@dimen/size_text_port"
                 tools:text="132456789" />
 
         </LinearLayout>

@@ -19,4 +19,5 @@
     <string name="btn_division">÷</string>
     <string name="btn_deleting">⌫</string>
     <string name="btn_multiply">×</string>
+    <string name="text_hint_var_b">0</string>
 </resources>

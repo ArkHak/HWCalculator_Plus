@@ -2,4 +2,5 @@
 <resources>
     <dimen name="lay_margin_btn">3dp</dimen>
     <dimen name="text_size_btn">50sp</dimen>
+    <dimen name="text_size_btn_land">20sp</dimen>
 </resources>

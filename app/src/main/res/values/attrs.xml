@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="сolorActionButton" format="color" />
-    <attr name="сolorCalculateButton" format="color" />
-    <attr name="сolorNumButton" format="color" />
-    <attr name="сolorTextCustom" format="color" />
+    <attr name="colorActionButton" format="color" />
+    <attr name="colorCalculateButton" format="color" />
+    <attr name="colorNumButton" format="color" />
+    <attr name="colorCleanButton" format="color" />
+    <attr name="colorTextCustom" format="color" />
+    <attr name="colorThemeButton" format="color" />
+    <attr name="backgroundApp" format="color" />
+    <attr name="colorTextButton" format="color" />
+
 </resources>

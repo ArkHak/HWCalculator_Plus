@@ -20,4 +20,6 @@
     <string name="btn_deleting">⌫</string>
     <string name="btn_multiply">×</string>
     <string name="text_hint_var_b">0</string>
+    <string name="light_theme">Light Theme</string>
+    <string name="dark_theme">Dark Theme</string>
 </resources>

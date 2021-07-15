@@ -7,7 +7,7 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_light"
+        android:background="?attr/backgroundApp"
         android:scaleType="centerCrop" />
 
     <LinearLayout
@@ -31,6 +31,7 @@
                 android:layout_marginHorizontal="@dimen/mrg_horzl_textview"
                 android:maxLines="1"
                 android:textAlignment="textEnd"
+                android:textColor="?attr/colorTextCustom"
                 android:textSize="@dimen/size_text_landscape"
                 tools:text="132456789" />
 
@@ -41,6 +42,7 @@
                 android:layout_marginHorizontal="@dimen/mrg_horzl_textview"
                 android:maxLines="1"
                 android:textAlignment="textEnd"
+                android:textColor="?attr/colorTextCustom"
                 android:textSize="@dimen/size_text_landscape"
                 tools:text="+" />
 
@@ -56,6 +58,7 @@
                 android:inputType="numberDecimal"
                 android:longClickable="false"
                 android:textAlignment="textEnd"
+                android:textColor="?attr/colorTextCustom"
                 android:textSize="@dimen/size_text_landscape"
                 tools:text="132456789" />
 
@@ -80,9 +83,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_action"
+                    android:backgroundTint="?attr/colorActionButton"
                     android:gravity="center"
                     android:text="@string/change_sing"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
                 <com.google.android.material.button.MaterialButton
@@ -91,9 +95,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_action"
+                    android:backgroundTint="?attr/colorActionButton"
                     android:gravity="center"
                     android:text="@string/btn_division"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
 
@@ -103,9 +108,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_action"
+                    android:backgroundTint="?attr/colorActionButton"
                     android:gravity="center"
                     android:text="@string/btn_multiply"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
                 <com.google.android.material.button.MaterialButton
@@ -114,9 +120,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_clear"
+                    android:backgroundTint="?attr/colorCleanButton"
                     android:gravity="center"
                     android:text="@string/btn_clear"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
             </LinearLayout>
@@ -132,9 +139,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_nums"
+                    android:backgroundTint="?attr/colorNumButton"
                     android:gravity="center"
                     android:text="@string/btn_7"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
                 <com.google.android.material.button.MaterialButton
@@ -143,9 +151,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_nums"
+                    android:backgroundTint="?attr/colorNumButton"
                     android:gravity="center"
                     android:text="@string/btn_8"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
                 <com.google.android.material.button.MaterialButton
@@ -154,9 +163,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_nums"
+                    android:backgroundTint="?attr/colorNumButton"
                     android:gravity="center"
                     android:text="@string/btn_9"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
                 <com.google.android.material.button.MaterialButton
@@ -165,9 +175,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_action"
+                    android:backgroundTint="?attr/colorActionButton"
                     android:gravity="center"
                     android:text="@string/btn_deleting"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
             </LinearLayout>
@@ -183,9 +194,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_nums"
+                    android:backgroundTint="?attr/colorNumButton"
                     android:gravity="center"
                     android:text="@string/btn_4"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
                 <com.google.android.material.button.MaterialButton
@@ -194,9 +206,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_nums"
+                    android:backgroundTint="?attr/colorNumButton"
                     android:gravity="center"
                     android:text="@string/btn_5"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
                 <com.google.android.material.button.MaterialButton
@@ -205,9 +218,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_nums"
+                    android:backgroundTint="?attr/colorNumButton"
                     android:gravity="center"
                     android:text="@string/btn_6"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
                 <com.google.android.material.button.MaterialButton
@@ -216,9 +230,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_action"
+                    android:backgroundTint="?attr/colorActionButton"
                     android:gravity="center"
                     android:text="@string/btn_minus"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
             </LinearLayout>
@@ -234,9 +249,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_nums"
+                    android:backgroundTint="?attr/colorNumButton"
                     android:gravity="center"
                     android:text="@string/btn_1"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
                 <com.google.android.material.button.MaterialButton
@@ -245,9 +261,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_nums"
+                    android:backgroundTint="?attr/colorNumButton"
                     android:gravity="center"
                     android:text="@string/btn_2"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
                 <com.google.android.material.button.MaterialButton
@@ -256,9 +273,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_nums"
+                    android:backgroundTint="?attr/colorNumButton"
                     android:gravity="center"
                     android:text="@string/btn_3"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
                 <com.google.android.material.button.MaterialButton
@@ -267,9 +285,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_action"
+                    android:backgroundTint="?attr/colorActionButton"
                     android:gravity="center"
                     android:text="@string/btn_plus"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
             </LinearLayout>
@@ -286,9 +305,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="2"
-                    android:backgroundTint="@color/clr_btn_nums"
+                    android:backgroundTint="?attr/colorNumButton"
                     android:gravity="center"
                     android:text="@string/btn_0"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
                 <com.google.android.material.button.MaterialButton
@@ -297,9 +317,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_nums"
+                    android:backgroundTint="?attr/colorNumButton"
                     android:gravity="center"
                     android:text="@string/btn_point"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
 
                 <com.google.android.material.button.MaterialButton
@@ -308,9 +329,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="@dimen/lay_margin_btn"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/clr_btn_calculate"
+                    android:backgroundTint="?attr/colorCalculateButton"
                     android:gravity="center"
                     android:text="@string/btn_calculate"
+                    android:textColor="?attr/colorTextButton"
                     android:textSize="@dimen/text_size_btn_land" />
             </LinearLayout>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="lay_margin_btn">3dp</dimen>
-    <dimen name="text_size_btn">37sp</dimen>
+    <dimen name="text_size_btn">35sp</dimen>
     <dimen name="text_size_btn_land">20sp</dimen>
     <dimen name="mrg_horzl_textview">16dp</dimen>
     <dimen name="mrg_vert_textview">8dp</dimen>

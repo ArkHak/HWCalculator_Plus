@@ -7,10 +7,9 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 public class SettingsActivity extends AppCompatActivity implements ConstansTheme {
-    private int codeStyleNew;
+    private int codeStyleCheck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,15 +18,13 @@ public class SettingsActivity extends AppCompatActivity implements ConstansTheme
         setTitle("Settings");
         setContentView(R.layout.activity_settings);
 
-        getCodeStyle();
         initView();
-
     }
 
     private void installCheckRB() {
         RadioButton lightRB = findViewById(R.id.radiobutton_light_theme);
         RadioButton darkRB = findViewById(R.id.radiobutton_dark_theme);
-        switch (codeStyleNew) {
+        switch (codeStyleCheck) {
             case CODE_LIGHT_THEME:
                 lightRB.setChecked(true);
                 break;
@@ -46,6 +43,7 @@ public class SettingsActivity extends AppCompatActivity implements ConstansTheme
     private int getCodeStyle(int codeStyle) {
         SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference,
                 MODE_PRIVATE);
+        codeStyleCheck = sharedPref.getInt(APP_THEME_CODE, codeStyle);
         return sharedPref.getInt(APP_THEME_CODE, codeStyle);
     }
 
@@ -60,26 +58,22 @@ public class SettingsActivity extends AppCompatActivity implements ConstansTheme
         }
     }
 
-    private void getCodeStyle() {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference,
-                MODE_PRIVATE);
-        codeStyleNew = sharedPref.getInt(APP_THEME_CODE, CODE_DEFAULT_THEME);
-    }
-
-
     private void initView() {
         initRadioGroup();
         installCheckRB();
 
         Button buttonApply = findViewById(R.id.apply_settings);
         buttonApply.setOnClickListener(v -> {
-            SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference,
-                    MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt(APP_THEME_CODE, codeStyleNew);
-            editor.apply();
             recreate();
         });
+    }
+
+    private void setCodeStyleSharedPref(int codeStyle) {
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference,
+                MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(APP_THEME_CODE, codeStyle);
+        editor.apply();
     }
 
     private void initRadioGroup() {
@@ -87,10 +81,10 @@ public class SettingsActivity extends AppCompatActivity implements ConstansTheme
         radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
             switch (checkedId) {
                 case R.id.radiobutton_light_theme:
-                    codeStyleNew = CODE_LIGHT_THEME;
+                    setCodeStyleSharedPref(CODE_LIGHT_THEME);
                     break;
                 case R.id.radiobutton_dark_theme:
-                    codeStyleNew = CODE_DARK_THEME;
+                    setCodeStyleSharedPref(CODE_DARK_THEME);
                     break;
                 default:
                     break;

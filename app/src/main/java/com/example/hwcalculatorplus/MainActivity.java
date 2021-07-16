@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,10 +27,16 @@ public class MainActivity extends AppCompatActivity {
             R.id.button_8, R.id.button_9};
     private final String PARAM_COUNTER = "PARAM_COUNTER";
 
+    private static final String NameSharedPreference = "SAVE_SP";
+    private static final String APP_THEME_CODE = "APP_THEME";
+    private static final int CODE_LIGHT_THEME = 0;
+    private static final int CODE_DARK_THEME = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(getAppTheme(R.style.MyLightTheme));
         setContentView(R.layout.activity_main);
 
         variables = new Variables();
@@ -35,6 +44,62 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.light_theme:
+                setAppTheme(CODE_LIGHT_THEME);
+                recreate();
+                return true;
+            case R.id.dark_theme:
+                setAppTheme(CODE_DARK_THEME);
+                recreate();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+    private int getAppTheme(int codeStyle) {
+        return codeStyleToStyleId(getCodeStyle(codeStyle));
+    }
+
+    private int getCodeStyle(int codeStyle) {
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference,
+                MODE_PRIVATE);
+        return sharedPref.getInt(APP_THEME_CODE, codeStyle);
+    }
+
+    private int codeStyleToStyleId(int codeStyle) {
+        switch (codeStyle) {
+            case CODE_LIGHT_THEME:
+                return R.style.MyLightTheme;
+            case CODE_DARK_THEME:
+                return R.style.MyDarkTheme;
+            default:
+                return R.style.MyLightTheme;
+        }
+    }
+
+    private void setAppTheme(int codeStyle) {
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference,
+                MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(APP_THEME_CODE, codeStyle);
+        editor.apply();
+    }
+
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
@@ -59,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         initViewFields();
         initViewBts();
     }
+
 
     private void initViewFields() {
         textCounterA = findViewById(R.id.view_variable_a);

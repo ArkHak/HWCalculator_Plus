@@ -7,4 +7,17 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="clr_btn_action">#88FF9800</color>
+    <color name="clr_btn_calculate">#884CAF50</color>
+    <color name="clr_btn_nums">#883F51B5</color>
+    <color name="clr_btn_clear">#88FF5252</color>
+    <color name="clr_btn_theme">#88FFEB3B</color>
+
+    <color name="clr_btn_action_dark">#11FF9800</color>
+    <color name="clr_btn_calculate_dark">#114CAF50</color>
+    <color name="clr_btn_nums_dark">#113F51B5</color>
+    <color name="clr_btn_clear_dark">#11FF5252</color>
+    <color name="clr_btn_theme_dark">#11FFEB3B</color>
+
 </resources>

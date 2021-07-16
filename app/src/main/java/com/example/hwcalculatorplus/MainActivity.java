@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,7 +16,7 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements ConstansTheme{
 
     private TextView textCounterA;
     private TextView textCounterAction;
@@ -57,13 +58,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
-            case R.id.light_theme:
-                setAppTheme(CODE_LIGHT_THEME);
-                recreate();
-                return true;
-            case R.id.dark_theme:
-                setAppTheme(CODE_DARK_THEME);
-                recreate();
+            case R.id.settings:
+                Intent runSettings = new Intent(this, SettingsActivity.class);
+                startActivity(runSettings);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

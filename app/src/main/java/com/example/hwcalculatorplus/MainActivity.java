@@ -1,12 +1,9 @@
 package com.example.hwcalculatorplus;
 
-import androidx.activity.result.contract.ActivityResultContract;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.VoiceInteractor;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -30,8 +27,6 @@ public class MainActivity extends AppCompatActivity implements ConstansTheme {
             R.id.button_3, R.id.button_4, R.id.button_5, R.id.button_6, R.id.button_7,
             R.id.button_8, R.id.button_9};
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +38,6 @@ public class MainActivity extends AppCompatActivity implements ConstansTheme {
 
         initView();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -65,18 +59,15 @@ public class MainActivity extends AppCompatActivity implements ConstansTheme {
         }
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode != REQUEST_CODE_SETTING_ACTIVITY) {
             super.onActivityResult(requestCode, resultCode, data);
             return;
         }
-        if (resultCode == RESULT_OK){
+        if (resultCode == RESULT_OK) {
             recreate();
         }
     }
-
-
 
     private int getAppTheme(int codeStyle) {
         return codeStyleToStyleId(getCodeStyle(codeStyle));
@@ -121,8 +112,8 @@ public class MainActivity extends AppCompatActivity implements ConstansTheme {
     private void initView() {
         initViewFields();
         initViewBts();
+        receivingDataFromOutside();
     }
-
 
     private void initViewFields() {
         textCounterA = findViewById(R.id.view_variable_a);
@@ -267,5 +258,15 @@ public class MainActivity extends AppCompatActivity implements ConstansTheme {
         textCounterA.setText(textCounters.getTextCounterA());
         textCounterAction.setText(textCounters.getTextCounterAction());
         textCounterB.setText(textCounters.getTextCounterB());
+    }
+
+    private void receivingDataFromOutside() {
+        Intent intentSend = getIntent();
+        Bundle bundle = intentSend.getExtras();
+        if (bundle == null) {
+            return;
+        }
+        String sendValueA = bundle.getString(VALUE_SEND);
+        textCounterB.setText(sendValueA);
     }
 }

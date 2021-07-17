@@ -1,6 +1,7 @@
 package com.example.hwcalculatorplus;
 
 public interface ConstansTheme {
+    String VALUE_SEND = "VALUE_SEND";
     String PARAM_COUNTER = "PARAM_COUNTER";
     String NameSharedPreference = "SAVE_SP";
     String APP_THEME_CODE = "APP_THEME";

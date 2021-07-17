@@ -2,6 +2,7 @@ package com.example.hwcalculatorplus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
@@ -44,7 +45,7 @@ public class SettingsActivity extends AppCompatActivity implements ConstansTheme
         SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference,
                 MODE_PRIVATE);
         codeStyleCheck = sharedPref.getInt(APP_THEME_CODE, codeStyle);
-        return sharedPref.getInt(APP_THEME_CODE, codeStyle);
+        return codeStyleCheck;
     }
 
     private int codeStyleToStyleId(int codeStyle) {
@@ -64,7 +65,9 @@ public class SettingsActivity extends AppCompatActivity implements ConstansTheme
 
         Button buttonApply = findViewById(R.id.apply_settings);
         buttonApply.setOnClickListener(v -> {
-            recreate();
+            Intent intentResult = new Intent();
+            setResult(RESULT_OK, intentResult);
+            finish();
         });
     }
 
@@ -91,6 +94,4 @@ public class SettingsActivity extends AppCompatActivity implements ConstansTheme
             }
         });
     }
-
-
 }

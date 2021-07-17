@@ -1,9 +1,12 @@
 package com.example.hwcalculatorplus;
 
+import androidx.activity.result.contract.ActivityResultContract;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.VoiceInteractor;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,7 +19,7 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity  implements ConstansTheme{
+public class MainActivity extends AppCompatActivity implements ConstansTheme {
 
     private TextView textCounterA;
     private TextView textCounterAction;
@@ -26,12 +29,7 @@ public class MainActivity extends AppCompatActivity  implements ConstansTheme{
     private final int[] numberButtonIds = new int[]{R.id.button_0, R.id.button_1, R.id.button_2,
             R.id.button_3, R.id.button_4, R.id.button_5, R.id.button_6, R.id.button_7,
             R.id.button_8, R.id.button_9};
-    private final String PARAM_COUNTER = "PARAM_COUNTER";
 
-    private static final String NameSharedPreference = "SAVE_SP";
-    private static final String APP_THEME_CODE = "APP_THEME";
-    private static final int CODE_LIGHT_THEME = 0;
-    private static final int CODE_DARK_THEME = 1;
 
 
     @Override
@@ -60,12 +58,24 @@ public class MainActivity extends AppCompatActivity  implements ConstansTheme{
         switch (id) {
             case R.id.settings:
                 Intent runSettings = new Intent(this, SettingsActivity.class);
-                startActivity(runSettings);
+                startActivityForResult(runSettings, REQUEST_CODE_SETTING_ACTIVITY);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (requestCode != REQUEST_CODE_SETTING_ACTIVITY) {
+            super.onActivityResult(requestCode, resultCode, data);
+            return;
+        }
+        if (resultCode == RESULT_OK){
+            recreate();
+        }
+    }
+
 
 
     private int getAppTheme(int codeStyle) {
@@ -88,15 +98,6 @@ public class MainActivity extends AppCompatActivity  implements ConstansTheme{
                 return R.style.MyLightTheme;
         }
     }
-
-    private void setAppTheme(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference,
-                MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(APP_THEME_CODE, codeStyle);
-        editor.apply();
-    }
-
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {

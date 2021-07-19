@@ -7,4 +7,7 @@
     <dimen name="mrg_vert_textview">8dp</dimen>
     <dimen name="size_text_port">35sp</dimen>
     <dimen name="size_text_landscape">20sp</dimen>
+    <dimen name="set_margin">8dp</dimen>
+    <dimen name="set_text_size">18sp</dimen>
+    <dimen name="set_text_size_title">25sp</dimen>
 </resources>

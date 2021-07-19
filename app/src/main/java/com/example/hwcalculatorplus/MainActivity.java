@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,7 +16,7 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ConstansTheme {
 
     private TextView textCounterA;
     private TextView textCounterAction;
@@ -25,13 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private final int[] numberButtonIds = new int[]{R.id.button_0, R.id.button_1, R.id.button_2,
             R.id.button_3, R.id.button_4, R.id.button_5, R.id.button_6, R.id.button_7,
             R.id.button_8, R.id.button_9};
-    private final String PARAM_COUNTER = "PARAM_COUNTER";
-
-    private static final String NameSharedPreference = "SAVE_SP";
-    private static final String APP_THEME_CODE = "APP_THEME";
-    private static final int CODE_LIGHT_THEME = 0;
-    private static final int CODE_DARK_THEME = 1;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         initView();
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -57,19 +50,24 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
-            case R.id.light_theme:
-                setAppTheme(CODE_LIGHT_THEME);
-                recreate();
-                return true;
-            case R.id.dark_theme:
-                setAppTheme(CODE_DARK_THEME);
-                recreate();
+            case R.id.settings:
+                Intent runSettings = new Intent(this, SettingsActivity.class);
+                startActivityForResult(runSettings, REQUEST_CODE_SETTING_ACTIVITY);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode != REQUEST_CODE_SETTING_ACTIVITY) {
+            super.onActivityResult(requestCode, resultCode, data);
+            return;
+        }
+        if (resultCode == RESULT_OK) {
+            recreate();
+        }
+    }
 
     private int getAppTheme(int codeStyle) {
         return codeStyleToStyleId(getCodeStyle(codeStyle));
@@ -91,15 +89,6 @@ public class MainActivity extends AppCompatActivity {
                 return R.style.MyLightTheme;
         }
     }
-
-    private void setAppTheme(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference,
-                MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(APP_THEME_CODE, codeStyle);
-        editor.apply();
-    }
-
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
@@ -123,8 +112,8 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         initViewFields();
         initViewBts();
+        receivingDataFromOutside();
     }
-
 
     private void initViewFields() {
         textCounterA = findViewById(R.id.view_variable_a);
@@ -269,5 +258,15 @@ public class MainActivity extends AppCompatActivity {
         textCounterA.setText(textCounters.getTextCounterA());
         textCounterAction.setText(textCounters.getTextCounterAction());
         textCounterB.setText(textCounters.getTextCounterB());
+    }
+
+    private void receivingDataFromOutside() {
+        Intent intentSend = getIntent();
+        Bundle bundle = intentSend.getExtras();
+        if (bundle == null) {
+            return;
+        }
+        String sendValueA = bundle.getString(VALUE_SEND);
+        textCounterB.setText(sendValueA);
     }
 }
